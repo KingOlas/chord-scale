@@ -13,6 +13,5 @@ As of Nov 13, 2021:
       - Finish populating mp3 tracks
       - Refine/Clean-Up UI
       - Toggle Audio Buttons / Work out Stop Button Bug
-      + Deploy ChordScale on Firebase
 
 ~ Olas Ortwein, stuID: 0972961
