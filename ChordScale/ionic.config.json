@@ -1,0 +1,8 @@
+{
+  "name": "ChordScale",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}
