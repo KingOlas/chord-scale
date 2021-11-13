@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<head>
+  <title>ChordScale App</title>
+  <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+      h2 {
+          color: #728b64;
+      }
+  </style>
+</head>
+
+<body>
+   <h1>ChordScale StyleGuide</h1>
+   <div>The ChordScale App will utilize Ionic framework to create the proper UI/UX.</div>
+   <h2>This color (hex #728b64) will be the primary color of the buttons</h2>
+   <div>Black will be the background and white will be the text color.
+       <br>This will give the app a sleek look, limiting distractions and making it easier to look at.
+   </div>
+</body>
+
+</html>
