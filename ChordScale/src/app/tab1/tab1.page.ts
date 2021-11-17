@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { ChordServiceService } from '../chord-service.service';
 import { MediaServiceService } from '../media-service.service';
 import { ContactService } from '../contact.service';
-//import { Media } from '@ionic-native/media/ngx';
 
 @Component({
   selector: 'app-tab1',
@@ -50,7 +49,7 @@ export class Tab1Page {
   }
 
   play(location: string) {
-    this.mediaService.getTrack(this.keyChoice, this.chordType, location)
+    this.mediaService.getTrack(location)
     const filename = location.split('\\').pop().split('/').pop()
     this.mediaService.playTrack();
     console.log(`Playing ${filename}`);

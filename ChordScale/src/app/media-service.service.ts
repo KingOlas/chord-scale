@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Media, MediaObject } from '@ionic-native/media/ngx';
 import { Howl, Howler } from 'howler';
 
 
@@ -8,7 +7,7 @@ import { Howl, Howler } from 'howler';
 })
 export class MediaServiceService {
 
-  constructor(private media:Media) {
+  constructor() {
     console.log('Media Service Running')
 
     Howler.volume(0.45);
@@ -44,13 +43,14 @@ export class MediaServiceService {
   //file: MediaObject
   player: Howl
 
-  getTrack(keyChoice: string, chordType: string, location: string) {
-    console.log(`Getting Chord Audio: ${keyChoice} ${chordType}`)
+  getTrack(location: string) {
+    console.log(`Getting Chord Audio`)
     this.player = new Howl ({
       src: [location]
     })
     const filename = location.split('\\').pop().split('/').pop()
     console.log(` Successfully Loaded ${filename}`)
+    return this.player
   }
 
   playTrack() {
