@@ -55,6 +55,14 @@ export class Tab1Page {
     console.log(`Playing ${filename}`);
   }
 
+  play2() {
+    if (this.mediaService.player.playing()) {
+      this.mediaService.stopTrack();
+    } else {
+      this.mediaService.playTrack();
+    }
+  }
+
   stop() {
     this.mediaService.stopTrack();
     console.log('Audio Stopped');
