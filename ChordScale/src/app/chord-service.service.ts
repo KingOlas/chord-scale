@@ -220,9 +220,9 @@ export class ChordServiceService {
     console.log(keyChoice + ' Half-Diminished Chord Data Returned')
     return {
         name: `${this.keyDict[keyChoice]['Root']} min7b5`,
-        chordScale: `${this.keyDict[keyChoice]['Root']} Half-Whole Dimimished Scale`,
-        scale: [this.keyDict[keyChoice]["1"], this.keyDict[keyChoice]["b2"], this.keyDict[keyChoice]["b3"], this.keyDict[keyChoice]["3"], this.keyDict[keyChoice]["b5"], this.keyDict[keyChoice]["5"], this.keyDict[keyChoice]["6"], this.keyDict[keyChoice]["b7"]],
-        scaleFile: `./assets/mp3s/${keyChoice} Half-Diminished scale.mp3`,
+        chordScale: `${this.keyDict[keyChoice]['Root']} Locrian Scale`,
+        scale: [this.keyDict[keyChoice]["1"], this.keyDict[keyChoice]["b2"], this.keyDict[keyChoice]["b3"], this.keyDict[keyChoice]["4"], this.keyDict[keyChoice]["b5"], this.keyDict[keyChoice]["b6"], this.keyDict[keyChoice]["b7"]],
+        scaleFile: `./assets/mp3s/${keyChoice} Locrian scale.mp3`,
         chordFile: `./assets/mp3s/${keyChoice} Half-Diminished chord.mp3`,
         chord_guide_tone: {
             "name": `${this.keyDict[keyChoice]['Root']} Half-Diminished Chord Tones`,
@@ -230,13 +230,7 @@ export class ChordServiceService {
             "path": `./assets/mp3s/${keyChoice} Half-Diminished chord tones.mp3`
         },
         extensions: null,
-        extra_extensions: [
-            {
-            "name": `${this.keyDict[keyChoice]['Root']} Locrian Scale`,
-            "keys": [this.keyDict[keyChoice]["1"], this.keyDict[keyChoice]["b2"], this.keyDict[keyChoice]["b3"], this.keyDict[keyChoice]["4"], this.keyDict[keyChoice]["b5"], this.keyDict[keyChoice]["b6"], this.keyDict[keyChoice]["b7"]],
-            "path": `./assets/mp3s/${keyChoice} Locrian scale.mp3`
-            } 
-        ],
+        extra_extensions: null,
         notes_to_avoid: [
             {
                 "name": `3`,
