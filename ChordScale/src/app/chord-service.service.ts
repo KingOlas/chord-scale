@@ -230,7 +230,13 @@ export class ChordServiceService {
             "path": `./assets/mp3s/${keyChoice} Half-Diminished chord tones.mp3`
         },
         extensions: null,
-        extra_extensions: null,
+        extra_extensions: [
+            {
+            "name": `${this.keyDict[keyChoice]['Root']} Locrian Scale`,
+            "keys": [this.keyDict[keyChoice]["1"], this.keyDict[keyChoice]["b2"], this.keyDict[keyChoice]["b3"], this.keyDict[keyChoice]["4"], this.keyDict[keyChoice]["b5"], this.keyDict[keyChoice]["b6"], this.keyDict[keyChoice]["b7"]],
+            "path": `./assets/mp3s/${keyChoice} Locrian scale.mp3`
+            } 
+        ],
         notes_to_avoid: [
             {
                 "name": `3`,
