@@ -1,30 +1,30 @@
 import { Injectable } from '@angular/core';
 import * as jsonData from './keyDict.json';
+import { HttpClient } from '@angular/common/http';
+
+
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 
 
 @Injectable({
   providedIn: 'root'
 })
+
+export class ConfigService {
+    constructor(private http: HttpClient, Observable, throwError) { }
+  }
+
 export class ChordServiceService {
 
   keyDict
+  keyDict2
 
   constructor() { 
     console.log('ChordService Running...')
     this.keyDict = jsonData['default']
 
-    // MongoConnect();
-
-    //   function MongoConnect() {
-    //       const { MongoClient } = require('mongodb');
-    //       const uri = "mongodb+srv://admin:cpOLSOd6dOnhA1tS@capstonecluster.sgbgy.mongodb.net/ChordScale?retryWrites=true&w=majority";
-    //       const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-    //       client.connect(err => {
-    //           const collection = client.db("ChordScale").collection("keyDict");
-    //           // perform actions on the collection object
-    //           client.close();
-    //       });
-    //   }
+    this.keyDict2 = HttpClient
   }
 
   majorChord(keyChoice: string) {
