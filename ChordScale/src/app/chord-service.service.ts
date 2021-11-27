@@ -1,19 +1,10 @@
 import { Injectable } from '@angular/core';
 import * as jsonData from './keyDict.json';
-import { HttpClient } from '@angular/common/http';
-
-
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
-
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class ConfigService {
-    constructor(private http: HttpClient, Observable, throwError) { }
-  }
 
 export class ChordServiceService {
 
@@ -24,7 +15,7 @@ export class ChordServiceService {
     console.log('ChordService Running...')
     this.keyDict = jsonData['default']
 
-    this.keyDict2 = HttpClient
+    // this.keyDict2 = getDatabase()
   }
 
   majorChord(keyChoice: string) {
