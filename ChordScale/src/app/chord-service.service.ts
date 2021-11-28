@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as jsonData from './keyDict.json';
+// import { getDatabase } from "firebase/database";
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +19,10 @@ export class ChordServiceService {
 
     // this.keyDict2 = getDatabase()
   }
+
+
+
+
 
   majorChord(keyChoice: string) {
     console.log(keyChoice + ' Major Chord Data Returned')
