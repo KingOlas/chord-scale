@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import * as jsonData from './keyDict.json';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Router } from "@angular/router";
+//import { getDatabase } from "firebase/database";
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,12 +17,12 @@ export class ChordServiceService {
 
   constructor(
     private ngFirestore: AngularFirestore,
-    private router: Router
   ) { 
     console.log('ChordService Running...')
     this.keyDict = jsonData['default']
 
-    this.keyDict = this.ngFirestore.collection('keyDict')
+    this.keyDict2 = this.ngFirestore.collection('keyDict')
+    //this.keyDict2 = getDatabase()
   }
 
   majorChord(keyChoice: string) {
