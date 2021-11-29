@@ -20,7 +20,7 @@ export class ChordServiceService {
     console.log('ChordService Running...')
     this.keyDict = jsonData['default']
 
-    this.keyDict2 = this.ngFirestore.collection('keyDict')
+    this.keyDict = this.ngFirestore.collection('keyDict')
   }
 
   majorChord(keyChoice: string) {
@@ -29,55 +29,55 @@ export class ChordServiceService {
         //The SHARP Problem: a bug I've encountered in Howler separates the location of mp3 files by the # sign - a strangely inauspicious crossover between music and programming...
         //Instead of using more code and processing power/time to properly parse the strings to connect to the appropriate audio file, I've added more data to the JSON
         //keyDict Dictionary - ('Root') - in order to avoid the Sharp/(#) bug in Howler, while processing the correct (and more visually appealing) note/scale data.
-        name: `${this.keyDict2[keyChoice]['Root']} maj7`,
-        chordScale: `${this.keyDict2[keyChoice]['Root']} Major Scale`,
-        scale: [this.keyDict2[keyChoice]['1'], this.keyDict2[keyChoice]['2'], this.keyDict2[keyChoice]['3'], this.keyDict2[keyChoice]['4'], this.keyDict2[keyChoice]['5'], this.keyDict2[keyChoice]['6'], this.keyDict2[keyChoice]['7']],
+        name: `${this.keyDict[keyChoice]['Root']} maj7`,
+        chordScale: `${this.keyDict[keyChoice]['Root']} Major Scale`,
+        scale: [this.keyDict[keyChoice]['1'], this.keyDict[keyChoice]['2'], this.keyDict[keyChoice]['3'], this.keyDict[keyChoice]['4'], this.keyDict[keyChoice]['5'], this.keyDict[keyChoice]['6'], this.keyDict[keyChoice]['7']],
         scaleFile: `./assets/mp3s/${keyChoice} Major scale.mp3`,
         chordFile: `./assets/mp3s/${keyChoice} Major chord.mp3`,
         chord_guide_tone: {
-            "name": `${this.keyDict2[keyChoice]['Root']} Major Chord Tones`,
-            "keys": [this.keyDict2[keyChoice]['1'], this.keyDict2[keyChoice]['3'], this.keyDict2[keyChoice]['5'], this.keyDict2[keyChoice]['7']],
+            "name": `${this.keyDict[keyChoice]['Root']} Major Chord Tones`,
+            "keys": [this.keyDict[keyChoice]['1'], this.keyDict[keyChoice]['3'], this.keyDict[keyChoice]['5'], this.keyDict[keyChoice]['7']],
             "path": `./assets/mp3s/${keyChoice} Major chord tones.mp3`
         },
         extensions: [
             {
                 "name": `9`,
-                "keys": this.keyDict2[keyChoice]['2'],
+                "keys": this.keyDict[keyChoice]['2'],
                 "path": `./assets/mp3s/${keyChoice} 9.mp3`
             },
             {
                 "name": `13`,
-                "keys": this.keyDict2[keyChoice]['6'],
+                "keys": this.keyDict[keyChoice]['6'],
                 "path": `./assets/mp3s/${keyChoice} 13.mp3`
 
             },
             {
                 "name": `#11`,
-                "keys": this.keyDict2[keyChoice]["b5"],
+                "keys": this.keyDict[keyChoice]["b5"],
                 "path": `./assets/mp3s/${keyChoice} Sharp_11.mp3`
             }
         ],
         extra_extensions: [
             {
-                "name": `${this.keyDict2[keyChoice]['Root']} Lydian Scale`,
-                "keys": [this.keyDict2[keyChoice]['1'], this.keyDict2[keyChoice]['2'], this.keyDict2[keyChoice]['3'], this.keyDict2[keyChoice]['b5'], this.keyDict2[keyChoice]['5'], this.keyDict2[keyChoice]['6'], this.keyDict2[keyChoice]['7']],
+                "name": `${this.keyDict[keyChoice]['Root']} Lydian Scale`,
+                "keys": [this.keyDict[keyChoice]['1'], this.keyDict[keyChoice]['2'], this.keyDict[keyChoice]['3'], this.keyDict[keyChoice]['b5'], this.keyDict[keyChoice]['5'], this.keyDict[keyChoice]['6'], this.keyDict[keyChoice]['7']],
                 "path": `./assets/mp3s/${keyChoice} Lydian scale.mp3`
             }
         ],
         notes_to_avoid: [
             {
                 "name": `b3`,
-                "key": this.keyDict2[keyChoice]["b3"],
+                "key": this.keyDict[keyChoice]["b3"],
                 "path": `./assets/mp3s/${keyChoice} Flat_3.mp3`
             },
             {
                 "name": `4`,
-                "keys": this.keyDict2[keyChoice]["4"],
+                "keys": this.keyDict[keyChoice]["4"],
                 "path": `./assets/mp3s/${keyChoice} 4.mp3`
             },
             {
                 "name": `b7`,
-                "keys": this.keyDict2[keyChoice]["b7"],
+                "keys": this.keyDict[keyChoice]["b7"],
                 "path": `./assets/mp3s/${keyChoice} Flat_7.mp3`
             }
         ]
