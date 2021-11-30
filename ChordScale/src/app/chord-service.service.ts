@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import * as jsonData from './keyDict.json';
+//import * as jsonData from './keyDict.json';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-//import { getDatabase } from "firebase/database";
+import { getDatabase, ref, child, get } from "firebase/database";
 
 
 
@@ -19,10 +19,20 @@ export class ChordServiceService {
     private ngFirestore: AngularFirestore,
   ) { 
     console.log('ChordService Running...')
-    this.keyDict = jsonData['default']
+    //this.keyDict = jsonData['default']
+    //console.log(this.keyDict)
 
-    this.keyDict2 = this.ngFirestore.collection('keyDict')
-    //this.keyDict2 = getDatabase()
+    this.keyDict2 = ref(getDatabase());
+    get(child(this.keyDict2, `keyDict`)).then((snapshot) => {
+      if (snapshot.exists()) {
+        this.keyDict = snapshot.val();
+        console.log(snapshot.val());
+      } else {
+        console.log("No data available");
+      }
+    }).catch((error) => {
+      console.error(error);
+    });
   }
 
   majorChord(keyChoice: string) {
