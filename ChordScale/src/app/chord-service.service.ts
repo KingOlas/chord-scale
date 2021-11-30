@@ -13,7 +13,7 @@ import { getDatabase, ref, child, get } from "firebase/database";
 export class ChordServiceService {
 
   keyDict
-  keyDict2
+  db
 
   constructor(
     private ngFirestore: AngularFirestore,
@@ -22,8 +22,8 @@ export class ChordServiceService {
     //this.keyDict = jsonData['default']
     //console.log(this.keyDict)
 
-    this.keyDict2 = ref(getDatabase());
-    get(child(this.keyDict2, `keyDict`)).then((snapshot) => {
+    this.db = ref(getDatabase());
+    get(child(this.db, `keyDict`)).then((snapshot) => {
       if (snapshot.exists()) {
         this.keyDict = snapshot.val();
         console.log(snapshot.val());
