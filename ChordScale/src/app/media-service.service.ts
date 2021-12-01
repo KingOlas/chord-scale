@@ -31,12 +31,12 @@ export class MediaServiceService {
     return this.player
   }
 
-  playTrack() {
-    this.player.play()
+  playTrack(player) {
+    player.play()
   }
 
-  stopTrack() {
-    this.player.stop()
+  stopTrack(player) {
+    player.stop()
   }
 
 }

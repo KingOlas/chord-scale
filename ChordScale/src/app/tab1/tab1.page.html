@@ -76,12 +76,12 @@
       <ion-grid>
         <!-- Main Scale Play / Stop Buttons -->
         <ion-row class="ion-padding-top">
-          <ion-button (click)="play(data.scaleFile)">
+          <ion-button (click)="play(scaleFile)">
             {{data.chordScale}}
             <ion-icon name="play"></ion-icon>
           </ion-button>
       
-          <ion-button (click)="stop()">
+          <ion-button (click)="stop(scaleFile)">
             <ion-icon slot="icon-only" name="square"></ion-icon>
           </ion-button>
         </ion-row>
@@ -96,12 +96,12 @@
 
         <!-- Guide Tone P/S Buttons -->
         <ion-row class="ion-padding-top">
-          <ion-button (click)="play(data.chord_guide_tone.path)">
+          <ion-button (click)="play(chordToneFile)">
             {{data.chord_guide_tone.name}}
             <ion-icon name="play"></ion-icon>
           </ion-button>
       
-          <ion-button (click)="stop()">
+          <ion-button (click)="stop(chordToneFile)">
             <ion-icon slot="icon-only" name="square"></ion-icon>
           </ion-button>
         </ion-row>
@@ -116,12 +116,12 @@
 
         <!-- Chord P/S Buttons -->
         <ion-row class="ion-padding-top">
-          <ion-button (click)="play(data.chordFile)">
+          <ion-button (click)="play(chordFile)">
             {{data.name}} Chord
             <ion-icon name="play"></ion-icon>
           </ion-button>
       
-          <ion-button (click)="stop()">
+          <ion-button (click)="stop(chordFile)">
             <ion-icon slot="icon-only" name="square"></ion-icon>
           </ion-button>
         </ion-row>
@@ -134,8 +134,8 @@
 
       <!-- Extension Buttons ( No Stop Buttons )-->
       <ion-row class="ion-padding top">
-        <ion-col *ngFor=" let i of data.extensions">
-          <ion-button (click)="play(i.path)">
+        <ion-col *ngFor="let i of data.extensions">
+          <ion-button (click)="play(extension1)">
             {{i.name}}: {{i.keys}}
           </ion-button>
         </ion-col>
@@ -149,12 +149,12 @@
       <div *ngFor="let i of data.extra_extensions">
         <!-- Other Scale P/S Buttons -->
         <ion-row class="ion-padding-top">
-          <ion-button (click)="play(i.path)">
+          <ion-button (click)="play(alternateScale1)">
             {{i.name}}
             <ion-icon name="play"></ion-icon>
           </ion-button>
       
-          <ion-button (click)="stop()">
+          <ion-button (click)="stop(alternateScale1)">
             <ion-icon slot="icon-only" name="square"></ion-icon>
           </ion-button>
         </ion-row>
