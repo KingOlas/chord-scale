@@ -135,8 +135,12 @@
       <!-- Extension Buttons ( No Stop Buttons )-->
       <ion-row class="ion-padding top">
         <ion-col *ngFor="let i of data.extensions">
-          <ion-button (click)="play(extension1)">
+          <ion-button (click)="play(i.track)">
             {{i.name}}: {{i.keys}}
+          </ion-button>
+          
+          <ion-button (click)="stop(i.track)">
+            <ion-icon slot="icon-only" name="square"></ion-icon>
           </ion-button>
         </ion-col>
       </ion-row>
@@ -149,12 +153,12 @@
       <div *ngFor="let i of data.extra_extensions">
         <!-- Other Scale P/S Buttons -->
         <ion-row class="ion-padding-top">
-          <ion-button (click)="play(alternateScale1)">
+          <ion-button (click)="play(i.track)">
             {{i.name}}
             <ion-icon name="play"></ion-icon>
           </ion-button>
       
-          <ion-button (click)="stop(alternateScale1)">
+          <ion-button (click)="stop(i.track)">
             <ion-icon slot="icon-only" name="square"></ion-icon>
           </ion-button>
         </ion-row>
@@ -176,8 +180,11 @@
       <!-- N2A Buttons ( No Stop Buttons )-->
       <ion-row class="ion-padding top">
         <ion-col *ngFor=" let i of data.notes_to_avoid">
-          <ion-button (click)="play(i.path)">
+          <ion-button (click)="play(i.track)">
             {{i.name}}: {{i.keys}}
+          </ion-button>
+          <ion-button (click)="stop(i.track)">
+            <ion-icon slot="icon-only" name="square"></ion-icon>
           </ion-button>
         </ion-col>
       </ion-row>

@@ -20,21 +20,6 @@ export class Tab1Page {
   chordToneFile
   chordFile
 
-  extension1
-  extension2
-  extension3
-  extension4
-  extension5
-  extension6
-  extension7
-
-  alternateScale1
-  alternateScale2
-
-  n2a1
-  n2a2
-  n2a3
-
   track
 
   constructor(public chordService: ChordServiceService, public mediaService: MediaServiceService, public contactService: ContactService) {}
@@ -44,23 +29,23 @@ export class Tab1Page {
     console.log('Getting Chord Data: ' + keyChoice + ' ' + chordType)
     switch (chordType) {
         case 'maj':
-            this.data = this.chordService.majorChord(keyChoice);
-            console.log(this.data);
+          this.data = this.chordService.majorChord(keyChoice);
+          console.log(this.data);
 
-            this.scaleFile = this.mediaService.getTrack(this.data.scaleFile)
-            this.chordToneFile = this.mediaService.getTrack(this.data.chord_guide_tone['path'])
-            this.chordFile = this.mediaService.getTrack(this.data.chordFile)
+          this.scaleFile = this.mediaService.getTrack(this.data.scaleFile)
+          this.chordToneFile = this.mediaService.getTrack(this.data.chord_guide_tone['path'])
+          this.chordFile = this.mediaService.getTrack(this.data.chordFile)
 
-            this.extension1 = this.mediaService.getTrack(this.data.extensions[0]['path'])
-            this.extension2 = this.mediaService.getTrack(this.data.extensions[1]['path'])
-            this.extension3 = this.mediaService.getTrack(this.data.extensions[2]['path'])
+          this.data.extensions[0]['track'] = this.mediaService.getTrack(this.data.extensions[0]['path'])
+          this.data.extensions[1]['track'] = this.mediaService.getTrack(this.data.extensions[1]['path'])
+          this.data.extensions[2]['track'] = this.mediaService.getTrack(this.data.extensions[2]['path'])
 
-            this.alternateScale1 = this.mediaService.getTrack(this.data.extra_extensions[0]['path'])
+          this.data.extra_extensions[0]['track'] = this.mediaService.getTrack(this.data.extra_extensions[0]['path'])
 
-            this.n2a1 = this.mediaService.getTrack(this.data.notes_to_avoid[0]['path'])
-            this.n2a2 = this.mediaService.getTrack(this.data.notes_to_avoid[1]['path'])
-            this.n2a3 = this.mediaService.getTrack(this.data.notes_to_avoid[2]['path'])
-              break;
+          this.data.notes_to_avoid[0]['track'] = this.mediaService.getTrack(this.data.notes_to_avoid[0]['path'])
+          this.data.notes_to_avoid[1]['track'] = this.mediaService.getTrack(this.data.notes_to_avoid[1]['path'])
+          this.data.notes_to_avoid[2]['track'] = this.mediaService.getTrack(this.data.notes_to_avoid[2]['path'])
+            break;
 
         case 'min':
           this.data = this.chordService.minorChord(keyChoice);
@@ -70,14 +55,14 @@ export class Tab1Page {
           this.chordToneFile = this.mediaService.getTrack(this.data.chord_guide_tone['path'])
           this.chordFile = this.mediaService.getTrack(this.data.chordFile)
 
-          this.extension1 = this.mediaService.getTrack(this.data.extensions[0]['path'])
-          this.extension2 = this.mediaService.getTrack(this.data.extensions[1]['path'])
-          this.extension3 = this.mediaService.getTrack(this.data.extensions[2]['path'])
+          this.data.extensions[0]['track'] = this.mediaService.getTrack(this.data.extensions[0]['path'])
+          this.data.extensions[1]['track'] = this.mediaService.getTrack(this.data.extensions[1]['path'])
+          this.data.extensions[2]['track'] = this.mediaService.getTrack(this.data.extensions[2]['path'])
 
-          this.alternateScale1 = this.mediaService.getTrack(this.data.extra_extensions[0]['path'])
+          this.data.extra_extensions[0]['track'] = this.mediaService.getTrack(this.data.extra_extensions[0]['path'])
 
-          this.n2a1 = this.mediaService.getTrack(this.data.notes_to_avoid[0]['path'])
-          this.n2a2 = this.mediaService.getTrack(this.data.notes_to_avoid[1]['path'])
+          this.data.notes_to_avoid[0]['track'] = this.mediaService.getTrack(this.data.notes_to_avoid[0]['path'])
+          this.data.notes_to_avoid[1]['track'] = this.mediaService.getTrack(this.data.notes_to_avoid[1]['path'])
             break;
 
         case 'dom':
@@ -88,18 +73,18 @@ export class Tab1Page {
           this.chordToneFile = this.mediaService.getTrack(this.data.chord_guide_tone['path'])
           this.chordFile = this.mediaService.getTrack(this.data.chordFile)
 
-          this.extension1 = this.mediaService.getTrack(this.data.extensions[0]['path'])
-          this.extension2 = this.mediaService.getTrack(this.data.extensions[1]['path'])
-          this.extension3 = this.mediaService.getTrack(this.data.extensions[2]['path'])
-          this.extension4 = this.mediaService.getTrack(this.data.extensions[3]['path'])
-          this.extension5 = this.mediaService.getTrack(this.data.extensions[4]['path'])
-          this.extension6 = this.mediaService.getTrack(this.data.extensions[5]['path'])
-          this.extension7 = this.mediaService.getTrack(this.data.extensions[6]['path'])
+          this.data.extensions[0]['track'] = this.mediaService.getTrack(this.data.extensions[0]['path'])
+          this.data.extensions[1]['track'] = this.mediaService.getTrack(this.data.extensions[1]['path'])
+          this.data.extensions[2]['track'] = this.mediaService.getTrack(this.data.extensions[2]['path'])
+          this.data.extensions[3]['track'] = this.mediaService.getTrack(this.data.extensions[3]['path'])
+          this.data.extensions[4]['track'] = this.mediaService.getTrack(this.data.extensions[4]['path'])
+          this.data.extensions[5]['track'] = this.mediaService.getTrack(this.data.extensions[5]['path'])
+          this.data.extensions[6]['track'] = this.mediaService.getTrack(this.data.extensions[6]['path'])
 
-          this.alternateScale1 = this.mediaService.getTrack(this.data.extra_extensions[0]['path'])
-          this.alternateScale2 = this.mediaService.getTrack(this.data.extra_extensions[1]['path'])
+          this.data.extra_extensions[0]['track'] = this.mediaService.getTrack(this.data.extra_extensions[0]['path'])
+          this.data.extra_extensions[1]['track'] = this.mediaService.getTrack(this.data.extra_extensions[1]['path'])
 
-          this.n2a1 = this.mediaService.getTrack(this.data.notes_to_avoid[0]['path'])
+          this.data.notes_to_avoid[0]['track'] = this.mediaService.getTrack(this.data.notes_to_avoid[0]['path'])
             break;
 
         case 'half':
@@ -110,8 +95,8 @@ export class Tab1Page {
           this.chordToneFile = this.mediaService.getTrack(this.data.chord_guide_tone['path'])
           this.chordFile = this.mediaService.getTrack(this.data.chordFile)
 
-          this.n2a1 = this.mediaService.getTrack(this.data.notes_to_avoid[0]['path'])
-          this.n2a2 = this.mediaService.getTrack(this.data.notes_to_avoid[1]['path'])
+          this.data.notes_to_avoid[0]['track'] = this.mediaService.getTrack(this.data.notes_to_avoid[0]['path'])
+          this.data.notes_to_avoid[1]['track'] = this.mediaService.getTrack(this.data.notes_to_avoid[1]['path'])
             break;
 
         case 'full':
@@ -122,25 +107,18 @@ export class Tab1Page {
           this.chordToneFile = this.mediaService.getTrack(this.data.chord_guide_tone['path'])
           this.chordFile = this.mediaService.getTrack(this.data.chordFile)
 
-          this.alternateScale1 = this.mediaService.getTrack(this.data.extra_extensions[0]['path'])
+          this.data.extra_extensions[0]['track'] = this.mediaService.getTrack(this.data.extra_extensions[0]['path'])
 
-          this.n2a1 = this.mediaService.getTrack(this.data.notes_to_avoid[0]['path'])
-          this.n2a2 = this.mediaService.getTrack(this.data.notes_to_avoid[1]['path'])
+          this.data.notes_to_avoid[0]['track'] = this.mediaService.getTrack(this.data.notes_to_avoid[0]['path'])
+          this.data.notes_to_avoid[1]['track'] = this.mediaService.getTrack(this.data.notes_to_avoid[1]['path'])
             break;
-            
+
         default:
           this.data = null;
             break;
     }
     return this.data;
   }
-
-  // play2(location: string) {
-  //   this.mediaService.getTrack(location)
-  //   const filename = location.split('\\').pop().split('/').pop()
-  //   this.mediaService.playTrack();
-  //   console.log(`Playing ${filename}`);
-  // }
 
   play(track) {
     this.mediaService.playTrack(track);
