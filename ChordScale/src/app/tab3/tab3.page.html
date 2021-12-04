@@ -13,38 +13,44 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle>Contact Form</ion-card-subtitle>
-    </ion-card-header>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-sm="10" size-md="8" size-lg="7" size-xl="6">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Contact Form</ion-card-subtitle>
+          </ion-card-header>
 
-    <form>
-      <ion-item>
-        <ion-label position="floating">Name</ion-label>
-        <ion-input placeholder="name"></ion-input>
-      </ion-item>
+          <form>
+            <ion-item>
+              <ion-label position="floating">Name</ion-label>
+              <ion-input placeholder="name"></ion-input>
+            </ion-item>
 
-      <ion-item>
-        <ion-label position="floating">Email</ion-label>
-        <ion-input placeholder="email"></ion-input>
-      </ion-item>
+            <ion-item>
+              <ion-label position="floating">Email</ion-label>
+              <ion-input placeholder="email"></ion-input>
+            </ion-item>
 
-      <ion-item>
-        <ion-label position="floating">Subject</ion-label>
-        <ion-input placeholder="subject"></ion-input>
-      </ion-item>
+            <ion-item>
+              <ion-label position="floating">Subject</ion-label>
+              <ion-input placeholder="subject"></ion-input>
+            </ion-item>
 
-      <ion-item>
-        <ion-label position="floating">Message</ion-label>
-        <ion-textarea placeholder="message"></ion-textarea>
-      </ion-item>
+            <ion-item>
+              <ion-label position="floating">Message</ion-label>
+              <ion-textarea placeholder="message"></ion-textarea>
+            </ion-item>
 
-      <ion-item>
-        <ion-button type="submit" (click)="contactSubmit()" color="primary" class="ion-activatable ripple-parent">Submit</ion-button>
-        <ion-button color="dark" class="ion-activatable ripple-parent">Cancel</ion-button>
-      </ion-item>
+            <ion-item>
+              <ion-button type="submit" (click)="contactSubmit()" color="primary" class="ion-activatable ripple-parent">Submit</ion-button>
+              <ion-button color="dark" class="ion-activatable ripple-parent">Cancel</ion-button>
+            </ion-item>
 
-    </form>
-  </ion-card>
+          </form>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   
 </ion-content>
