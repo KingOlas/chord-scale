@@ -24,22 +24,22 @@
           <form>
             <ion-item>
               <ion-label position="floating">Name</ion-label>
-              <ion-input placeholder="name"></ion-input>
+              <ion-input [(ngModel)]="name" id="name" type="text" placeholder="Name"></ion-input>
             </ion-item>
 
             <ion-item>
               <ion-label position="floating">Email</ion-label>
-              <ion-input placeholder="email"></ion-input>
+              <ion-input [(ngModel)]="email" id="email" type="email" placeholder="email@gmail.com"></ion-input>
             </ion-item>
 
             <ion-item>
               <ion-label position="floating">Subject</ion-label>
-              <ion-input placeholder="subject"></ion-input>
+              <ion-input [(ngModel)]="subject" id="subject" type="text" placeholder="Subject"></ion-input>
             </ion-item>
 
             <ion-item>
               <ion-label position="floating">Message</ion-label>
-              <ion-textarea placeholder="message"></ion-textarea>
+              <ion-textarea [(ngModel)]="message" id="message" type="text" placeholder="Message"></ion-textarea>
             </ion-item>
 
             <ion-item>

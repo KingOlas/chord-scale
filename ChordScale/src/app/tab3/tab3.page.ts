@@ -8,6 +8,11 @@ import { ContactService } from '../contact.service';
 })
 export class Tab3Page {
 
+  name
+  email
+  subject
+  message
+
   constructor(public contactPrompt: ContactService) {}
 
   // Contact Service Placeholder - full Contact Service will come in future updates //

@@ -10,23 +10,9 @@ export class ContactService {
   
   async contactAlert() {
     const alert = await this.alertController.create({
-      header: 'Message Sent',
-      subHeader: 'Thank You!',
-      message: 'Expect a reply within the next 5 business days.',
-      buttons: ['OK']
-    });
-
-    await alert.present();
-
-    const { role } = await alert.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
-  }
-
-  async mediaAlert() {
-    const alert = await this.alertController.create({
-      header: 'Media Not Created',
-      subHeader: 'We are working to create more Audio for you to hear.',
-      message: 'Come back and check frequently for updates!',
+      header: 'Under Construction',
+      subHeader: 'Contact Form Unavailable',
+      message: 'We are working to get this functional again - Check back soon.',
       buttons: ['OK']
     });
 
