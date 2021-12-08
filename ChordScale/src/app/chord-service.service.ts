@@ -221,7 +221,7 @@ export class ChordServiceService {
                 "name": `b13`,
                 "keys": this.keyDict[keyChoice]["b6"],
                 "path": `./assets/mp3s/${keyChoice} Flat_13.mp3`,
-                "chord": `${this.keyDict[keyChoice]['Root']}7b13 , ${this.keyDict[keyChoice]['Root']}7#5)`
+                "chord": `${this.keyDict[keyChoice]['Root']}7b13 , ${this.keyDict[keyChoice]['Root']}7#5`
             }
             
         ],
