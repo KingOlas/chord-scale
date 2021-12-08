@@ -27,7 +27,7 @@
           <ion-list>
             <ion-item>
               <ion-label for="keyChoice">Root</ion-label>
-              <ion-select required [(ngModel)]="keyChoice" id="keyChoice" name="keyChoice" placeholder="Select Chord Root" okText="Select" cancelText="Cancel">
+              <ion-select [(ngModel)]="keyChoice" id="keyChoice" name="keyChoice" placeholder="Select Chord Root" okText="Select" cancelText="Cancel" required>
                 <ion-select-option name="c" value="C">C</ion-select-option>
                 <ion-select-option name="cSharp" value="C Sharp">C#</ion-select-option>
                 <ion-select-option name="dFlat" value="Db">Db</ion-select-option>
@@ -47,7 +47,7 @@
           
             <ion-item>
               <ion-label for="chordType">Type</ion-label>
-              <ion-select required [(ngModel)]="chordType" id="chordType" name="chordType" placeholder="Select Chord Type" okText="Select" cancelText="Cancel">
+              <ion-select [(ngModel)]="chordType" id="chordType" name="chordType" placeholder="Select Chord Type" okText="Select" cancelText="Cancel" required>
                 <ion-select-option name="major" value="maj">Major</ion-select-option>
                 <ion-select-option name="minor" value="min">Minor</ion-select-option>
                 <ion-select-option name="dominant" value="dom">Dominant</ion-select-option>

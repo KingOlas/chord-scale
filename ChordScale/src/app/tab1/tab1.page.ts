@@ -12,7 +12,6 @@ export class Tab1Page {
 
   keyChoice: string
   chordType: string
-  location: string
 
   data
 

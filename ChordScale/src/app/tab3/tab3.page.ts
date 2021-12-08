@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { ContactService } from '../contact.service';
 
 @Component({
@@ -8,16 +9,14 @@ import { ContactService } from '../contact.service';
 })
 export class Tab3Page {
 
-  name
-  email
-  subject
-  message
+  contactData: FormGroup
 
   constructor(public contactPrompt: ContactService) {}
 
   // Contact Service Placeholder - full Contact Service will come in future updates //
   contactSubmit() {
-    console.log('Message Sent')
+
+    console.log("something")
     this.contactPrompt.contactAlert()
   }
 
