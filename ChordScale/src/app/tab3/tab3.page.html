@@ -21,67 +21,47 @@
             <ion-card-title>
               Send us a message!
             </ion-card-title>
-            <ion-card-subtitle>
+            <!-- <ion-card-subtitle>
               <a href="mailto:chordscaleapp@gmail.com">ChordScaleApp@gmail.com</a>
-            </ion-card-subtitle>
+            </ion-card-subtitle> -->
           </ion-card-header>
-          <!-- <form [formGroup]="angForm" novalidate>
 
-            <div class="form-group">
+          <form>
 
               <ion-item>
                 <ion-label position="floating">Name</ion-label>
-                <ion-input class="form-control" [(ngModel)]="name" id="name" formControlName="name" type="text" placeholder="What is your name?"></ion-input>
+                <ion-input [(ngModel)]="name" name="name" type="text"placeholder="What is your name?"></ion-input>
               </ion-item>
-              <div *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched)" class="alert alert-danger">
-                <div *ngIf="angForm.controls['name'].errors.required">
-                <em>Name is required.</em>
-                </div>
-              </div>
-
+              
               <ion-item>
                 <ion-label position="floating">Email</ion-label>
-                <ion-input class="form-control" [(ngModel)]="email" id="email" formControlName="email" type="email" placeholder="email@domain.com"></ion-input>
+                <ion-input [(ngModel)]="email" name="email" type="email"placeholder="email@domain.com"></ion-input>
               </ion-item>
-              <div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)" class="alert alert-danger">
-                <div *ngIf="angForm.controls['email'].errors.required">
-                <em>Email is required.</em>
-                </div>
-              </div>
-
+              
               <ion-item>
                 <ion-label position="floating">Subject</ion-label>
-                <ion-input class="form-control" [(ngModel)]="subject" id="subject" formControlName="subject" type="text" placeholder="What is your message about?"></ion-input>
+                <ion-input [(ngModel)]="subject" name="subject" type="text" placeholder="What is your message about?"></ion-input>
               </ion-item>
-              <div *ngIf="angForm.controls['subject'].invalid && (angForm.controls['subject'].dirty || angForm.controls['subject'].touched)" class="alert alert-danger">
-                <div *ngIf="angForm.controls['subject'].errors.required">
-                <em>Subject is required.</em>
-                </div>
-              </div>
 
               <ion-item>
                 <ion-label position="floating">Message</ion-label>
-                <ion-textarea class="form-control" [(ngModel)]="message" id="message" formControlName="message" type="text" placeholder="Tell us what you think!"></ion-textarea>
+                <ion-textarea [(ngModel)]="message" name="message" type="text"placeholder="Tell us what you think!"></ion-textarea>
               </ion-item>
-              <div *ngIf="angForm.controls['message'].invalid && (angForm.controls['message'].dirty || angForm.controls['message'].touched)" class="alert alert-danger">
-                <div *ngIf="angForm.controls['message'].errors.required">
-                <em>Message is required.</em>
-                </div>
-              </div>
 
               <ion-item>
-                <ion-button type="submit" [disabled]="angForm.pristine || angForm.invalid" (click)="contactSubmit()" color="primary" class="ion-activatable ripple-parent">Submit</ion-button>
+                <ion-button type="submit" (click)="contactSubmit()" color="primary" class="ion-activatable ripple-parent">Submit</ion-button>
                 <ion-button color="dark" class="ion-activatable ripple-parent">Cancel</ion-button>
               </ion-item>
-            </div>
-          </form> -->
+            
+          </form>
+
         </ion-card>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
         <ion-card>
-          
+
         </ion-card>
       </ion-col>
     </ion-row>

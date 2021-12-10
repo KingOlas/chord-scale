@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ContactService } from '../contact.service';
 
 @Component({
@@ -9,15 +9,26 @@ import { ContactService } from '../contact.service';
 })
 export class Tab3Page {
 
-  contactData: FormGroup
+  name: string
+  email: string
+  subject: string
+  message: string
 
-  constructor(public contactPrompt: ContactService) {}
+  constructor(public contactService: ContactService) {}
 
-  // Contact Service Placeholder - full Contact Service will come in future updates //
-  contactSubmit() {
+  //Contact Form will connect to service in future updates //
+  async contactSubmit() {
+    if (this.name == null || this.email == null || this.subject == null || this.message == null) {
+      this.contactService.contactAlert()
+    } else {
+      this.contactService.contactSuccess()
 
-    console.log("something")
-    this.contactPrompt.contactAlert()
+      console.log(`Message sent from ${this.email}`)
+
+      this.name = '';
+      this.email = '';
+      this.subject = '';
+      this.message = '';
+    }
   }
-
 }

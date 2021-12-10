@@ -6,21 +6,39 @@ import { AlertController } from '@ionic/angular';
 })
 export class ContactService {
 
-  constructor(public alertController: AlertController) { }
+  constructor(public alertController: AlertController) {}
   
   async contactAlert() {
     const alert = await this.alertController.create({
-      header: 'Under Construction',
-      subHeader: 'Contact Form Unavailable',
-      message: 'We are working to get this functional again - Check back soon.',
+      header: 'Contact Form Invalid',
+      subHeader: 'All Fields Required',
+      message: 'Please fill out all fields.',
       buttons: ['OK']
     });
 
     await alert.present();
+  }
 
-    const { role } = await alert.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
+  async contactSuccess() {
+    const alert = await this.alertController.create({
+      header: 'Thank You!',
+      subHeader: 'Your message has been sent!',
+      message: 'We will get back to you as soon as possible!',
+      buttons: ['OK']
+    });
 
+    await alert.present();
+  }
+
+  async chordAlert() {
+    const alert = await this.alertController.create({
+      header: 'Invalid Selection',
+      subHeader: 'All Fields Required',
+      message: 'Please select both a Chord and a Chord-Type.',
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 
 }
