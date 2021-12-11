@@ -26,8 +26,9 @@
             </ion-card-subtitle> -->
           </ion-card-header>
 
+          <!-- ngModel and FormGroup/FormBuilder/FormControl do not work together -->
+          <!-- Dummy Form in place until more time is available -->
           <form>
-
               <ion-item>
                 <ion-label position="floating">Name</ion-label>
                 <ion-input [(ngModel)]="name" name="name" type="text"placeholder="What is your name?"></ion-input>
@@ -52,15 +53,7 @@
                 <ion-button type="submit" (click)="contactSubmit()" color="primary" class="ion-activatable ripple-parent">Submit</ion-button>
                 <ion-button color="dark" class="ion-activatable ripple-parent">Cancel</ion-button>
               </ion-item>
-            
           </form>
-
-        </ion-card>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-card>
 
         </ion-card>
       </ion-col>

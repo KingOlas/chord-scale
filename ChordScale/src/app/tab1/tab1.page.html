@@ -13,10 +13,11 @@
     </ion-toolbar>
   </ion-header>
   
-  <!-- Chord Selector -->
   <ion-grid>
     <ion-row class="ion-justify-content-center">
       <ion-col size="12" size-sm="6" size-md="6" size-lg="4" size-xl="3">
+
+        <!-- Chord Selector -->
         <ion-card>
           <ion-card-header>
             <ion-card-title class="ion-text-center">
@@ -64,9 +65,10 @@
       </ion-col>
     </ion-row>
         
+    <!-- ngIf Data has not been processed: -->
     <ion-row class="ion-justify-content-center" *ngIf="data == null">
-      <!-- No Data Display -->
       <ion-col size="12" size-sm="6" size-md="6" size-lg="4" size-xl="3">
+
         <ion-card class="ion-padding">
           <ion-card-title class="ion-text-center">
             <em>No Chord Selected</em>
@@ -75,17 +77,23 @@
             <em>First time using the app? Check out the Info tab!</em>
           </ion-card-content>
         </ion-card>
+
       </ion-col>
     </ion-row>
 
+    <!-- ngIf Data HAS been processed: -->
     <ion-row class="ion-justify-content-center" *ngIf="data != null">
-      <!-- Chord Data Display  -->
+      
       <ion-col size="12" size-sm="6" size-md="6" size-lg="5" size-xl="3">
+
+        <!-- Processed Chord Data  -->
         <ion-card class="ion-padding">
           <ion-card-title class="ion-text-center">Most Useful Notes for {{data.name}}:</ion-card-title>
           <ion-card-subtitle class="ion-text-center">These are the fundamental notes that make up a {{data.name}} chord and the scale best suited to play over it.</ion-card-subtitle>
-          <!-- Standard Scales & Notes: All Types -->
+          
+          <!-- Standard Scales & Notes -->
           <ion-grid>
+
             <!-- Main Scale Play / Stop Buttons -->
             <ion-row class="ion-padding-top">
               <ion-button (click)="play(scaleFile)">
@@ -105,7 +113,7 @@
               </ion-col>
             </ion-row>
 
-            <!-- Guide Tone P/S Buttons -->
+            <!-- Chord Tone P/S Buttons -->
             <ion-row class="ion-padding-top">
               <ion-button (click)="play(chordToneFile)">
                 {{data.chord_guide_tone.name}}
@@ -117,7 +125,7 @@
               </ion-button>
             </ion-row>
 
-            <!-- Guide Tones -->
+            <!-- Chord Tones -->
             <ion-row class="ion-justify-content-left">
               <ion-col size="1.5" *ngFor="let degree of data.chord_guide_tone.keys">
                 <strong>{{degree}}</strong>
@@ -136,6 +144,7 @@
               </ion-button>
             </ion-row>
 
+            <!-- Chord Type Description: Utilizing Processed Data -->
             <ion-row class="ion-padding-top">
               {{data.mainText}}
             </ion-row>
@@ -143,12 +152,16 @@
         </ion-card>
       </ion-col>
 
+      <!-- ngIF the Chord has Extensions: -->
       <ion-col size="12" size-sm="6" size-md="6" size-lg="5" size-xl="3" *ngIf="data.extensions != null">
+
         <!-- Chord Extensions -->
         <ion-card class="ion-padding">
           <ion-card-title class="ion-text-center">{{data.name}} Chord Extensions:</ion-card-title>
           <ion-card-subtitle class="ion-text-center">Unless explicitly stated in the chord symbol, use with discretion.</ion-card-subtitle>
           <br>
+
+          <!-- Extension Card Layout Syntax -->
           <ion-card-subtitle class="ion-text-center">
             <em>(Extension | Chord Symbol)</em>
           </ion-card-subtitle>
@@ -163,6 +176,7 @@
               <ion-icon slot="icon-only" name="square"></ion-icon>
             </ion-button>
 
+            <!-- Chord Symbol Associated with Extension -->
             <ion-col class="ion-padding, ion-text-center">
               <strong>{{i.chord}}</strong>
             </ion-col>
@@ -170,7 +184,9 @@
         </ion-card>
       </ion-col>
       
+      <!-- ngIF The Chord has Other Scales to Use: -->
       <ion-col size="12" size-sm="6" size-md="6" size-lg="5" size-xl="3" *ngIf="data.extra_extensions != null">
+
         <!-- Other Scales -->
         <ion-card class="ion-padding">
           <ion-card-title class="ion-text-center">Other Interesting Scales:</ion-card-title>
@@ -199,7 +215,9 @@
         </ion-card>
       </ion-col>
 
+      <!-- ngIf the Chord has any Notes to Avoid (N2A -->
       <ion-col size="12" size-sm="6" size-md="6" size-lg="5" size-xl="3" *ngIf="data.notes_to_avoid != null">
+
         <!-- Notes to Avoid (N2A) -->
         <ion-card class="ion-padding">
           <ion-card-title class="ion-text-center">Notes to Avoid:</ion-card-title>
@@ -220,5 +238,4 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-
 </ion-content>

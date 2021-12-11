@@ -8,6 +8,7 @@ export class ContactService {
 
   constructor(public alertController: AlertController) {}
   
+  // Contact Form Validation Alert
   async contactAlert() {
     const alert = await this.alertController.create({
       header: 'Contact Form Invalid',
@@ -19,6 +20,7 @@ export class ContactService {
     await alert.present();
   }
 
+  // Contact Form Success Alert
   async contactSuccess() {
     const alert = await this.alertController.create({
       header: 'Thank You!',
@@ -30,6 +32,7 @@ export class ContactService {
     await alert.present();
   }
 
+  // Chord Input Form Validation Alert
   async chordAlert() {
     const alert = await this.alertController.create({
       header: 'Invalid Selection',
