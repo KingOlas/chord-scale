@@ -4,14 +4,13 @@ This is the ChordScale App; an application designed to help anyone and everyone 
 
 Hosted here via Firebase: https://chord-scale.web.app/
 
-As of Nov 13, 2021:
+As of Dec 11, 2021:
   - Main Functions operating as intended
   - Theme Colors in place
   - Howler.js Media Service operating
   - ChordScale Algorithm properly processes keyDict Chord Data
+  - UI/UX has been refined to a usable point
   - Future Goals: 
-      - Finish populating mp3 tracks
-      - Refine/Clean-Up UI
-      - Toggle Audio Buttons / Work out Stop Button Bug
+      Connect Contact Form to DB
 
 ~ Olas Ortwein
