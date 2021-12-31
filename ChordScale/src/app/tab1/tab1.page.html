@@ -132,6 +132,18 @@
               </ion-col>
             </ion-row>
 
+            <!-- Chord P/S Buttons -->
+          <ion-row class="ion-padding-top" *ngIf="data.extensions == null">
+            <ion-button (click)="play(chordFile)">
+              {{data.name}} Chord
+              <ion-icon name="play"></ion-icon>
+            </ion-button>
+        
+            <ion-button (click)="stop(chordFile)">
+              <ion-icon slot="icon-only" name="square"></ion-icon>
+            </ion-button>
+          </ion-row>
+
             <!-- Chord Type Description: Utilizing Processed Data -->
             <ion-row class="ion-padding-top">
               {{data.mainText}}
