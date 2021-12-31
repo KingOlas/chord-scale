@@ -132,18 +132,6 @@
               </ion-col>
             </ion-row>
 
-            <!-- Chord P/S Buttons -->
-            <ion-row class="ion-padding-top">
-              <ion-button (click)="play(chordFile)">
-                {{data.name}} Chord
-                <ion-icon name="play"></ion-icon>
-              </ion-button>
-          
-              <ion-button (click)="stop(chordFile)">
-                <ion-icon slot="icon-only" name="square"></ion-icon>
-              </ion-button>
-            </ion-row>
-
             <!-- Chord Type Description: Utilizing Processed Data -->
             <ion-row class="ion-padding-top">
               {{data.mainText}}
@@ -159,6 +147,21 @@
         <ion-card class="ion-padding">
           <ion-card-title class="ion-text-center">{{data.name}} Chord Extensions:</ion-card-title>
           <ion-card-subtitle class="ion-text-center">Unless explicitly stated in the chord symbol, use with discretion.</ion-card-subtitle>
+          
+          <br>
+
+          <!-- Chord P/S Buttons -->
+          <ion-row class="ion-padding, ion-justify-content-center">
+            <ion-button (click)="play(chordFile)">
+              {{data.name}} Chord
+              <ion-icon name="play"></ion-icon>
+            </ion-button>
+        
+            <ion-button (click)="stop(chordFile)">
+              <ion-icon slot="icon-only" name="square"></ion-icon>
+            </ion-button>
+          </ion-row>
+
           <br>
 
           <!-- Extension Card Layout Syntax -->
