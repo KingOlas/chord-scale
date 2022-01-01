@@ -91,7 +91,7 @@ export class ChordServiceService {
             notes_to_avoid: [
                 {
                     "name": `b3`,
-                    "key": this.keyDict[keyChoice]["b3"],
+                    "keys": this.keyDict[keyChoice]["b3"],
                     "path": `./assets/mp3s/${keyChoice} Flat_3.mp3`
                 },
                 {
