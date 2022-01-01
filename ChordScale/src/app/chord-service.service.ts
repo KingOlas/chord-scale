@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as jsonData from './keyDict.json';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { getDatabase, ref, child, get } from "firebase/database";
+//import { AngularFirestore } from '@angular/fire/compat/firestore';
+//import { getDatabase, ref, child, get } from "firebase/database";
 
 
 @Injectable({
@@ -18,7 +18,7 @@ export class ChordServiceService {
     db
 
     // For some reason, initializing AngularFirestore is neccessary to use the Firebase modules
-    constructor(private ngFirestore: AngularFirestore) { 
+    constructor() { 
         console.log('ChordService Running...')
 
         // Below is the old keyDict initialization when pulled from local JSON
