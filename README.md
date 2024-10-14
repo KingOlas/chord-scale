@@ -4,17 +4,14 @@ This is the ChordScale App; an application designed to help anyone and everyone 
 
 Hosted here via Firebase: https://chord-scale.web.app/
 
-As of Feb 3, 2022:
-  - Main Functions operating as intended
-  - Theme Colors in place
-  - Howler.js Media Service operating
-  - ChordScale Algorithm properly processes keyDict Chord Data
-  - UI/UX has been refined to a usable point
+As of Oct 14, 2024:
+  - Updates have been made to properly deploy to Firebase
 
-  - Current project:
-      - Connect Contact Form to DB
+  - Considering rebuilding in seperate repository with new assets and software packages
+    - Need to use legacy versions of Node and Angular in order to still function
       
   - Future Goals: 
       - Add more scales & chord-types
+      - Connect Contact Form to appropriate storage
 
 ~ Olas Ortwein
