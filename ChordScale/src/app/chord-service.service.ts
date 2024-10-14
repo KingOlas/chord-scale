@@ -148,9 +148,9 @@ export class ChordServiceService {
             extra_extensions: [
                 {
                     // Relative Lydian Scale, based on the flat 3rd of the Minor Scale
-                    "name": this.majorChord(this.keyDict[keyChoice]['b3']).extra_extensions[0].name,
-                    "keys": this.majorChord(this.keyDict[keyChoice]['b3']).extra_extensions[0].keys,
-                    "path": this.majorChord(this.keyDict[keyChoice]['b3']).extra_extensions[0].path
+                    "name": `${this.keyDict[keyChoice]['b3']} Lydian Scale`,
+                    "keys": [this.keyDict[keyChoice]['b3'], this.keyDict[keyChoice]['4'], this.keyDict[keyChoice]['5'], this.keyDict[keyChoice]['6'], this.keyDict[keyChoice]['b7'], this.keyDict[keyChoice]['1'], this.keyDict[keyChoice]['2']],
+                    "path": `./assets/mp3s/` + this.keyDict[keyChoice]['b3'] + ` Lydian scale.mp3`
                 }
             ],
             notes_to_avoid: [
