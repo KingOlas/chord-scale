@@ -16,24 +16,23 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
-  imports: [BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    IonicModule.forRoot(),
-    AppRoutingModule,
-    HttpClientModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
-      // Register the ServiceWorker as soon as the app is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
-      })
+    declarations: [AppComponent],
+    imports: [BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
+        IonicModule.forRoot(),
+        AppRoutingModule,
+        HttpClientModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireDatabaseModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {
+            enabled: environment.production,
+            // Register the ServiceWorker as soon as the app is stable
+            // or after 30 seconds (whichever comes first).
+            registrationStrategy: 'registerWhenStable:30000'
+        })
     ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, Media],
-  bootstrap: [AppComponent],
+    providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, Media],
+    bootstrap: [AppComponent]
 })
 export class AppModule {}
