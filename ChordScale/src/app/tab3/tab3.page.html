@@ -21,44 +21,71 @@
             <ion-card-title>
               Send us a message!
             </ion-card-title>
-            <!-- gmail link in place when Form is under construction -->
-            <!-- <ion-card-subtitle>
+            <!-- Uncomment the following if you want to display a Gmail link -->
+            <!--
+            <ion-card-subtitle>
               <a href="mailto:chordscaleapp@gmail.com">ChordScaleApp@gmail.com</a>
-            </ion-card-subtitle> -->
+            </ion-card-subtitle>
+            -->
           </ion-card-header>
 
-          <!-- ngModel and FormGroup/FormBuilder/FormControl do not work together -->
-          <!-- Dummy Form in place until more time is available -->
+          <!-- Dummy form (ngModel used for simple two-way binding) -->
           <form>
-              <ion-item>
-                <ion-label position="floating">Name</ion-label>
-                <ion-input [(ngModel)]="name" name="name" type="text"placeholder="What is your name?"></ion-input>
-              </ion-item>
-              
-              <ion-item>
-                <ion-label position="floating">Email</ion-label>
-                <ion-input [(ngModel)]="email" name="email" type="email"placeholder="email@domain.com"></ion-input>
-              </ion-item>
-              
-              <ion-item>
-                <ion-label position="floating">Subject</ion-label>
-                <ion-input [(ngModel)]="subject" name="subject" type="text" placeholder="What is your message about?"></ion-input>
-              </ion-item>
+            <ion-item>
+              <ion-label position="floating">Name</ion-label>
+              <ion-input
+                [(ngModel)]="name"
+                name="name"
+                type="text"
+                placeholder="What is your name?"
+              ></ion-input>
+            </ion-item>
 
-              <ion-item>
-                <ion-label position="floating">Message</ion-label>
-                <ion-textarea [(ngModel)]="message" name="message" type="text"placeholder="Tell us what you think!"></ion-textarea>
-              </ion-item>
+            <ion-item>
+              <ion-label position="floating">Email</ion-label>
+              <ion-input
+                [(ngModel)]="email"
+                name="email"
+                type="email"
+                placeholder="email@domain.com"
+              ></ion-input>
+            </ion-item>
 
-              <ion-item>
-                <ion-button type="submit" (click)="contactSubmit()" color="primary" class="ion-activatable ripple-parent">Submit</ion-button>
-                <ion-button color="dark" class="ion-activatable ripple-parent">Cancel</ion-button>
-              </ion-item>
+            <ion-item>
+              <ion-label position="floating">Subject</ion-label>
+              <ion-input
+                [(ngModel)]="subject"
+                name="subject"
+                type="text"
+                placeholder="What is your message about?"
+              ></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Message</ion-label>
+              <ion-textarea
+                [(ngModel)]="message"
+                name="message"
+                placeholder="Tell us what you think!"
+              ></ion-textarea>
+            </ion-item>
+
+            <ion-item>
+              <ion-button
+                type="submit"
+                (click)="contactSubmit()"
+                color="primary"
+                class="ion-activatable ripple-parent"
+              >
+                Submit
+              </ion-button>
+              <ion-button color="dark" class="ion-activatable ripple-parent">
+                Cancel
+              </ion-button>
+            </ion-item>
           </form>
-
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
-  
 </ion-content>

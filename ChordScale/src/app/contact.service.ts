@@ -7,7 +7,7 @@ import { AlertController } from '@ionic/angular';
 export class ContactService {
 
   constructor(public alertController: AlertController) {}
-  
+
   // Contact Form Validation Alert
   async contactAlert() {
     const alert = await this.alertController.create({

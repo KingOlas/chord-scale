@@ -11,154 +11,148 @@ import { ContactService } from '../contact.service';
 export class Tab1Page {
 
   // User Input: Chord Variables
-  keyChoice: string
-  chordType: string
+  keyChoice: string;
+  chordType: string;
 
   // variable for Processed Chord Data
-  data
+  data: any;
 
-  // variables for Main Howler Objects 
-  scaleFile
-  chordToneFile
-  chordFile
+  // variables for Main Howler Objects
+  scaleFile: any;
+  chordToneFile: any;
+  chordFile: any;
 
   // variable for Howler Functions
-  track
+  track: any;
 
-  constructor(public chordService: ChordServiceService, public mediaService: MediaServiceService, public contactService: ContactService) {}
-  
+  constructor(
+    public chordService: ChordServiceService,
+    public mediaService: MediaServiceService,
+    public contactService: ContactService
+  ) { }
+
   async getChord(keyChoice: string, chordType: string) {
-    // input validation
+    // Input validation
     if (this.keyChoice == null || this.chordType == null) {
-      return await this.contactService.chordAlert()
+      return await this.contactService.chordAlert();
     } else {
-
-      // keyChoice determines which array to process from the KeyDict
-      // chordType determines how the array data is processed
-      console.log('Getting Chord Data: ' + keyChoice + ' ' + chordType)
+      console.log('Getting Chord Data: ' + keyChoice + ' ' + chordType);
       switch (chordType) {
-    
-          // Major Chord
-          case 'maj':
-            // this.data = the processed Chord Data
-            this.data = this.chordService.majorChord(keyChoice);
-            console.log(this.data);
 
-            // Assigning Main Howler Objects via mediaService
-            this.scaleFile = this.mediaService.getTrack(this.data.scaleFile)
-            this.chordToneFile = this.mediaService.getTrack(this.data.chord_guide_tone['path'])
-            this.chordFile = this.mediaService.getTrack(this.data.chordFile)
+        // Major Chord
+        case 'maj':
+          this.data = this.chordService.majorChord(keyChoice);
+          console.log(this.data);
 
-            // Re-Assigning Track Path Objects as Howler Objects via mediaService
-            this.data.extensions[0]['track'] = this.mediaService.getTrack(this.data.extensions[0]['path'])
-            this.data.extensions[1]['track'] = this.mediaService.getTrack(this.data.extensions[1]['path'])
-            this.data.extensions[2]['track'] = this.mediaService.getTrack(this.data.extensions[2]['path'])
+          // Assigning Main Howler Objects via mediaService
+          this.scaleFile = this.mediaService.getTrack(this.data.scaleFile);
+          this.chordToneFile = this.mediaService.getTrack(this.data.chordGuideTone.path);
+          this.chordFile = this.mediaService.getTrack(this.data.chordFile);
 
-            this.data.extra_extensions[0]['track'] = this.mediaService.getTrack(this.data.extra_extensions[0]['path'])
+          // Re-Assigning Track Path Objects as Howler Objects via mediaService
+          this.data.extensions[0].track = this.mediaService.getTrack(this.data.extensions[0].path);
+          this.data.extensions[1].track = this.mediaService.getTrack(this.data.extensions[1].path);
+          this.data.extensions[2].track = this.mediaService.getTrack(this.data.extensions[2].path);
 
-            this.data.notes_to_avoid[0]['track'] = this.mediaService.getTrack(this.data.notes_to_avoid[0]['path'])
-            this.data.notes_to_avoid[1]['track'] = this.mediaService.getTrack(this.data.notes_to_avoid[1]['path'])
-            this.data.notes_to_avoid[2]['track'] = this.mediaService.getTrack(this.data.notes_to_avoid[2]['path'])
-              break;
+          this.data.extraExtensions[0].track = this.mediaService.getTrack(this.data.extraExtensions[0].path);
 
-          // Minor Chord
-          case 'min':
-            // this.data = the processed Chord Data
-            this.data = this.chordService.minorChord(keyChoice);
-            console.log(this.data)
+          this.data.notesToAvoid[0].track = this.mediaService.getTrack(this.data.notesToAvoid[0].path);
+          this.data.notesToAvoid[1].track = this.mediaService.getTrack(this.data.notesToAvoid[1].path);
+          this.data.notesToAvoid[2].track = this.mediaService.getTrack(this.data.notesToAvoid[2].path);
+          break;
 
-            // Assigning Main Howler Objects
-            this.scaleFile = this.mediaService.getTrack(this.data.scaleFile)
-            this.chordToneFile = this.mediaService.getTrack(this.data.chord_guide_tone['path'])
-            this.chordFile = this.mediaService.getTrack(this.data.chordFile)
+        // Minor Chord
+        case 'min':
+          this.data = this.chordService.minorChord(keyChoice);
+          console.log(this.data);
 
-            // Re-Assigning Track Path Objects as Howler Objects
-            this.data.extensions[0]['track'] = this.mediaService.getTrack(this.data.extensions[0]['path'])
-            this.data.extensions[1]['track'] = this.mediaService.getTrack(this.data.extensions[1]['path'])
-            this.data.extensions[2]['track'] = this.mediaService.getTrack(this.data.extensions[2]['path'])
+          // Assigning Main Howler Objects
+          this.scaleFile = this.mediaService.getTrack(this.data.scaleFile);
+          this.chordToneFile = this.mediaService.getTrack(this.data.chordGuideTone.path);
+          this.chordFile = this.mediaService.getTrack(this.data.chordFile);
 
-            this.data.extra_extensions[0]['track'] = this.mediaService.getTrack(this.data.extra_extensions[0]['path'])
+          // Re-Assigning Track Path Objects as Howler Objects
+          this.data.extensions[0].track = this.mediaService.getTrack(this.data.extensions[0].path);
+          this.data.extensions[1].track = this.mediaService.getTrack(this.data.extensions[1].path);
+          this.data.extensions[2].track = this.mediaService.getTrack(this.data.extensions[2].path);
 
-            this.data.notes_to_avoid[0]['track'] = this.mediaService.getTrack(this.data.notes_to_avoid[0]['path'])
-            this.data.notes_to_avoid[1]['track'] = this.mediaService.getTrack(this.data.notes_to_avoid[1]['path'])
-              break;
+          this.data.extraExtensions[0].track = this.mediaService.getTrack(this.data.extraExtensions[0].path);
 
-          // Dominant (7) Chord
-          case 'dom':
-            // this.data = the processed Chord Data
-            this.data = this.chordService.domChord(keyChoice);
-            console.log(this.data)
+          this.data.notesToAvoid[0].track = this.mediaService.getTrack(this.data.notesToAvoid[0].path);
+          this.data.notesToAvoid[1].track = this.mediaService.getTrack(this.data.notesToAvoid[1].path);
+          break;
 
-            // Assigning Main Howler Objects
-            this.scaleFile = this.mediaService.getTrack(this.data.scaleFile)
-            this.chordToneFile = this.mediaService.getTrack(this.data.chord_guide_tone['path'])
-            this.chordFile = this.mediaService.getTrack(this.data.chordFile)
+        // Dominant (7) Chord
+        case 'dom':
+          this.data = this.chordService.domChord(keyChoice);
+          console.log(this.data);
 
-            // Re-Assigning Track Path Objects as Howler Objects
-            this.data.extensions[0]['track'] = this.mediaService.getTrack(this.data.extensions[0]['path'])
-            this.data.extensions[1]['track'] = this.mediaService.getTrack(this.data.extensions[1]['path'])
-            this.data.extensions[2]['track'] = this.mediaService.getTrack(this.data.extensions[2]['path'])
-            this.data.extensions[3]['track'] = this.mediaService.getTrack(this.data.extensions[3]['path'])
-            this.data.extensions[4]['track'] = this.mediaService.getTrack(this.data.extensions[4]['path'])
-            this.data.extensions[5]['track'] = this.mediaService.getTrack(this.data.extensions[5]['path'])
-            this.data.extensions[6]['track'] = this.mediaService.getTrack(this.data.extensions[6]['path'])
+          // Assigning Main Howler Objects
+          this.scaleFile = this.mediaService.getTrack(this.data.scaleFile);
+          this.chordToneFile = this.mediaService.getTrack(this.data.chordGuideTone.path);
+          this.chordFile = this.mediaService.getTrack(this.data.chordFile);
 
-            this.data.extra_extensions[0]['track'] = this.mediaService.getTrack(this.data.extra_extensions[0]['path'])
-            this.data.extra_extensions[1]['track'] = this.mediaService.getTrack(this.data.extra_extensions[1]['path'])
+          // Re-Assigning Track Path Objects as Howler Objects
+          this.data.extensions[0].track = this.mediaService.getTrack(this.data.extensions[0].path);
+          this.data.extensions[1].track = this.mediaService.getTrack(this.data.extensions[1].path);
+          this.data.extensions[2].track = this.mediaService.getTrack(this.data.extensions[2].path);
+          this.data.extensions[3].track = this.mediaService.getTrack(this.data.extensions[3].path);
+          this.data.extensions[4].track = this.mediaService.getTrack(this.data.extensions[4].path);
+          this.data.extensions[5].track = this.mediaService.getTrack(this.data.extensions[5].path);
+          this.data.extensions[6].track = this.mediaService.getTrack(this.data.extensions[6].path);
 
-            this.data.notes_to_avoid[0]['track'] = this.mediaService.getTrack(this.data.notes_to_avoid[0]['path'])
-              break;
+          this.data.extraExtensions[0].track = this.mediaService.getTrack(this.data.extraExtensions[0].path);
+          this.data.extraExtensions[1].track = this.mediaService.getTrack(this.data.extraExtensions[1].path);
 
-          // Half-Diminished Chord
-          case 'half':
-            // this.data = the processed Chord Data
-            this.data = this.chordService.halfDimChord(keyChoice);
-            console.log(this.data)
+          this.data.notesToAvoid[0].track = this.mediaService.getTrack(this.data.notesToAvoid[0].path);
+          break;
 
-            // Assigning Main Howler Objects
-            this.scaleFile = this.mediaService.getTrack(this.data.scaleFile)
-            this.chordToneFile = this.mediaService.getTrack(this.data.chord_guide_tone['path'])
-            this.chordFile = this.mediaService.getTrack(this.data.chordFile)
+        // Half-Diminished Chord
+        case 'half':
+          this.data = this.chordService.halfDimChord(keyChoice);
+          console.log(this.data);
 
-            // Re-Assigning Track Path Objects as Howler Objects
-            this.data.notes_to_avoid[0]['track'] = this.mediaService.getTrack(this.data.notes_to_avoid[0]['path'])
-            this.data.notes_to_avoid[1]['track'] = this.mediaService.getTrack(this.data.notes_to_avoid[1]['path'])
-              break;
+          // Assigning Main Howler Objects
+          this.scaleFile = this.mediaService.getTrack(this.data.scaleFile);
+          this.chordToneFile = this.mediaService.getTrack(this.data.chordGuideTone.path);
+          this.chordFile = this.mediaService.getTrack(this.data.chordFile);
 
-          // Fully-Diminished Chord
-          case 'full':
-            this.data = this.chordService.fullDimChord(keyChoice);
-            console.log(this.data)
+          this.data.notesToAvoid[0].track = this.mediaService.getTrack(this.data.notesToAvoid[0].path);
+          this.data.notesToAvoid[1].track = this.mediaService.getTrack(this.data.notesToAvoid[1].path);
+          break;
 
-            // Assigning Main Howler Objects
-            this.scaleFile = this.mediaService.getTrack(this.data.scaleFile)
-            this.chordToneFile = this.mediaService.getTrack(this.data.chord_guide_tone['path'])
-            this.chordFile = this.mediaService.getTrack(this.data.chordFile)
+        // Fully-Diminished Chord
+        case 'full':
+          this.data = this.chordService.fullDimChord(keyChoice);
+          console.log(this.data);
 
-            // Re-Assigning Track Path Objects as Howler Objects
-            this.data.extra_extensions[0]['track'] = this.mediaService.getTrack(this.data.extra_extensions[0]['path'])
+          // Assigning Main Howler Objects
+          this.scaleFile = this.mediaService.getTrack(this.data.scaleFile);
+          this.chordToneFile = this.mediaService.getTrack(this.data.chordGuideTone.path);
+          this.chordFile = this.mediaService.getTrack(this.data.chordFile);
 
-            this.data.notes_to_avoid[0]['track'] = this.mediaService.getTrack(this.data.notes_to_avoid[0]['path'])
-            this.data.notes_to_avoid[1]['track'] = this.mediaService.getTrack(this.data.notes_to_avoid[1]['path'])
-              break;
+          this.data.extraExtensions[0].track = this.mediaService.getTrack(this.data.extraExtensions[0].path);
 
-          default:
-            this.data = null;
-              break;
+          this.data.notesToAvoid[0].track = this.mediaService.getTrack(this.data.notesToAvoid[0].path);
+          this.data.notesToAvoid[1].track = this.mediaService.getTrack(this.data.notesToAvoid[1].path);
+          break;
+
+        default:
+          this.data = null;
+          break;
       }
       return this.data;
     }
   }
 
   // Utilizing "track" object to control specific Howler Objects with the correct play/stop buttons
-  play(track) {
+  play(track: any) {
     this.mediaService.playTrack(track);
-    console.log('Audio Playing')
+    console.log('Audio Playing');
   }
 
-  stop(track) {
+  stop(track: any) {
     this.mediaService.stopTrack(track);
     console.log('Audio Stopped');
   }
-
 }

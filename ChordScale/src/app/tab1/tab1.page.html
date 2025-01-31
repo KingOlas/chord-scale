@@ -66,7 +66,7 @@
     </ion-row>
         
     <!-- ngIf Data has not been processed: -->
-    <ion-row class="ion-justify-content-center" *ngIf="data == null">
+    <ion-row class="ion-justify-content-center" *ngIf="data === null">
       <ion-col size="12" size-sm="6" size-md="6" size-lg="4" size-xl="3">
 
         <ion-card class="ion-padding">
@@ -82,7 +82,7 @@
     </ion-row>
 
     <!-- ngIf Data HAS been processed: -->
-    <ion-row class="ion-justify-content-center" *ngIf="data != null">
+    <ion-row class="ion-justify-content-center" *ngIf="data !== null">
       
       <ion-col size="12" size-sm="6" size-md="6" size-lg="5" size-xl="3">
 
@@ -133,7 +133,7 @@
             </ion-row>
 
             <!-- Chord P/S Buttons -->
-          <ion-row class="ion-padding-top" *ngIf="data.extensions == null">
+          <ion-row class="ion-padding-top" *ngIf="data.extensions === null">
             <ion-button (click)="play(chordFile)">
               {{data.name}} Chord
               <ion-icon name="play"></ion-icon>
@@ -153,7 +153,7 @@
       </ion-col>
 
       <!-- ngIF the Chord has Extensions: -->
-      <ion-col size="12" size-sm="6" size-md="6" size-lg="5" size-xl="3" *ngIf="data.extensions != null">
+      <ion-col size="12" size-sm="6" size-md="6" size-lg="5" size-xl="3" *ngIf="data.extensions !== null">
 
         <!-- Chord Extensions -->
         <ion-card class="ion-padding">
@@ -200,7 +200,7 @@
       </ion-col>
       
       <!-- ngIF The Chord has Other Scales to Use: -->
-      <ion-col size="12" size-sm="6" size-md="6" size-lg="5" size-xl="3" *ngIf="data.extra_extensions != null">
+      <ion-col size="12" size-sm="6" size-md="6" size-lg="5" size-xl="3" *ngIf="data.extra_extensions !== null">
 
         <!-- Other Scales -->
         <ion-card class="ion-padding">
@@ -231,7 +231,7 @@
       </ion-col>
 
       <!-- ngIf the Chord has any Notes to Avoid (N2A -->
-      <ion-col size="12" size-sm="6" size-md="6" size-lg="5" size-xl="3" *ngIf="data.notes_to_avoid != null">
+      <ion-col size="12" size-sm="6" size-md="6" size-lg="5" size-xl="3" *ngIf="data.notes_to_avoid !== null">
 
         <!-- Notes to Avoid (N2A) -->
         <ion-card class="ion-padding">

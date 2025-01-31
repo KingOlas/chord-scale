@@ -9,10 +9,10 @@ import { ContactService } from '../contact.service';
 })
 export class Tab3Page {
 
-  name: string
-  email: string
-  subject: string
-  message: string
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
 
   constructor(public contactService: ContactService) {}
 
@@ -22,12 +22,12 @@ export class Tab3Page {
   async contactSubmit() {
     // Input Validation
     if (this.name == null || this.email == null || this.subject == null || this.message == null) {
-      this.contactService.contactAlert()
+      this.contactService.contactAlert();
     } else {
-      this.contactService.contactSuccess()
+      this.contactService.contactSuccess();
 
       // Ensuring data is being parsed from input fields
-      console.log(`${this.name}'s message sent from ${this.email} | ${this.subject}: ${this.message}`)
+      console.log(`${this.name}'s message sent from ${this.email} | ${this.subject}: ${this.message}`);
 
       // Reset/Clear Form
       this.name = '';
